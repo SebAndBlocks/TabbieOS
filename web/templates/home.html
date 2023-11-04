@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    {% if name %}
+    <title>{{ name }}</title>
+    {% else %}
+    <title>Tabbie</title>
+    {% endif %}
+    <style>
+        body {
+            color: white;
+            background: {% if bg %} {{ bg }} {% else %} #00004B {% endif %} no-repeat fixed center;
+            margin: 0rem;
+            font-family: 'Oswald', sans-serif;
+        }
+        .bwrap {
+            margin: 2rem;
+        }
+        head {
+            height: 0rem;
+            margin: 0rem;
+        }
+        .wt {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bwrap">
+        <h4>Tabbie {{ version }}</h4>
+        {% if welcome_text %}
+        <h1 class="wt">{{ welcome_text }}</h1>
+        {% else %}
+        <h1 class="wt">Add a Welcome Text in the Config</h1>
+        {% endif %}
+    </div class="bwrap">
+</body>
