@@ -9,7 +9,8 @@
     <style>
         body {
             color: white;
-            background: {% if bg %} {{ bg }} {% else %} #00004B {% endif %} no-repeat fixed center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), {% if bg %} {{ bg }} {% else %} url(https://imgs.search.brave.com/an18eS9keW4vyoNYzxMfLfJCPurYVaI6W6D4NCK1srg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9saWJyYXJ5LWJh/Y2tncm91bmRfMjUw/NDY5LTcuanBnP3Np/emU9NjI2JmV4dD1q/cGc) {% endif %} no-repeat fixed center;
+            background-size: cover;
             margin: 0rem;
             font-family: 'Oswald', sans-serif;
         }
@@ -21,7 +22,7 @@
             margin: 0rem;
         }
         .wt {
-            font-size: 3rem;
+            font-size: 3.5rem;
             text-align: center;
         }
 
@@ -29,9 +30,9 @@
 </head>
 <body>
     <div class="bwrap">
-        <h4>Tabbie {{ version }}</h4>
-        {% if welcome_text %}
-        <h1 class="wt">{{ welcome_text }}</h1>
+        <h2>Tabbie {{ version }}</h4>
+        {% if wt %}
+        <h1 class="wt">{{ wt }}</h1>
         {% else %}
         <h1 class="wt">Add a Welcome Text in the Config</h1>
         {% endif %}

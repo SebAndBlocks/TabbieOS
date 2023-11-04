@@ -1,0 +1,13 @@
+{
+    "master_pswd": "batmansuperman123",
+    "stu_lib": {
+        "type": "wonde",
+        "acc_key": "abc123",
+        "exdata": "api"
+    },
+    "home_page": {
+        "pagetitle": "[Your School] Interactive Library System",
+        "welcometext": "Welcome to [Your School] Library!"
+    },
+    "buttonclr": {}
+}
