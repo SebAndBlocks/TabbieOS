@@ -30,7 +30,12 @@
             background-color: {{ bc }};
             color: {{ btc }};
             padding: 14px 28px;
-            font-size: 16px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            width: 80rem;
+            height 3.5rem;
+            border-radius: 5rem;
+            margin-top: 2.25rem;
         }
     </style>
 </head>
@@ -42,8 +47,10 @@
         {% else %}
         <h1 class="wt">Add a Welcome Text in the Config</h1>
         {% endif %}
-        <a href="login"><button>LOGIN / LOGOUT</button></a>
-        <a href="lib"><button>LIBRARY INFO</button></a>
-        <a href="student-info"><button>STUDENT INFO</button></a>
+        <center>
+            <p><a href="login"><button>LOGIN / LOGOUT</button></a></p>
+            <p><a href="lib"><button>LIBRARY INFO</button></a></p>
+            <p><a href="student-info"><button>STUDENT INFO</button></a></p>
+        </center>
     </div class="bwrap">
 </body>

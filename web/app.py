@@ -26,31 +26,28 @@ def isMasterPassword(pswd):
     
 def getBtnClr():
     try:
-        save = open("save.json")
-        bc = save.read["btnclr"]
-        save.close()
-        return bc
+        sr = open("save.json")
+        save = jx.loads(sr.read())
+        return save["btnclr"]
     except FileNotFoundError:
         return FileExistsError
     
 def getBtnLnClr():
     try:
-        save = open("save.json")
-        bc = save.read["btnlnclr"]
-        save.close()
-        return bc
+        sr = open("save.json")
+        save = jx.loads(sr.read())
+        return save["btnlnclr"]
     except FileNotFoundError:
         return FileExistsError
     
 def getBtnTxtClr():
     try:
-        save = open("save.json")
-        bc = save.read["btntxtclr"]
-        save.close()
-        return bc
+        sr = open("save.json")
+        save = jx.loads(sr.read())
+        return save["btntxtclr"]
     except FileNotFoundError:
         return FileExistsError
 
 @app.route("/")
 def home():
-    return render_template("home.html", wt=getHomePageSave()["welcometext"], name=getHomePageSave()["pagetitle"], bc = getBtnClr(), blc = getBtnLnClr(), btc = getBtnTxtClr())
+    return render_template("home.html", wt=getHomePageSave()["welcometext"], name=getHomePageSave()["pagetitle"], bc = getBtnClr(), blc = getBtnLnClr(), btc = getBtnTxtClr(), version = ver)
