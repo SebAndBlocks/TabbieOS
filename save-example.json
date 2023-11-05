@@ -1,13 +1,15 @@
 {
-    "master_pswd": "batmansuperman123",
+    "master_pswd": "canthackme123",
     "stu_lib": {
         "type": "wonde",
         "acc_key": "abc123",
         "exdata": "api"
     },
     "home_page": {
-        "pagetitle": "[Your School] Interactive Library System",
-        "welcometext": "Welcome to [Your School] Library!"
+        "pagetitle": "Seb's School of Fun Interactive Library System",
+        "welcometext": "Welcome to Seb's School of Fun Library!"
     },
-    "buttonclr": {}
+    "btnclr": "#1d34e2",
+    "btnlnclr": "#99c8f6",
+    "btntxtclr": "#000000"
 }

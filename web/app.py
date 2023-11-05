@@ -22,8 +22,35 @@ def isMasterPassword(pswd):
             save.close()
             return False
     except FileNotFoundError:
-        return "nosave"
+        return FileExistsError
     
+def getBtnClr():
+    try:
+        save = open("save.json")
+        bc = save.read["btnclr"]
+        save.close()
+        return bc
+    except FileNotFoundError:
+        return FileExistsError
+    
+def getBtnLnClr():
+    try:
+        save = open("save.json")
+        bc = save.read["btnlnclr"]
+        save.close()
+        return bc
+    except FileNotFoundError:
+        return FileExistsError
+    
+def getBtnTxtClr():
+    try:
+        save = open("save.json")
+        bc = save.read["btntxtclr"]
+        save.close()
+        return bc
+    except FileNotFoundError:
+        return FileExistsError
+
 @app.route("/")
 def home():
-    return render_template("home.html", wt=getHomePageSave()["welcometext"], name=getHomePageSave()["pagetitle"])
+    return render_template("home.html", wt=getHomePageSave()["welcometext"], name=getHomePageSave()["pagetitle"], bc = getBtnClr(), blc = getBtnLnClr(), btc = getBtnTxtClr())
