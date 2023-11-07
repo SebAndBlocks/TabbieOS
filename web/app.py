@@ -22,7 +22,7 @@ def isMasterPassword(pswd):
             save.close()
             return False
     except FileNotFoundError:
-        return FileExistsError
+        return FileNotFoundError
     
 def getBtnClr():
     try:
@@ -30,7 +30,7 @@ def getBtnClr():
         save = jx.loads(sr.read())
         return save["btnclr"]
     except FileNotFoundError:
-        return FileExistsError
+        return FileNotFoundError
     
 def getBtnLnClr():
     try:
@@ -38,7 +38,7 @@ def getBtnLnClr():
         save = jx.loads(sr.read())
         return save["btnlnclr"]
     except FileNotFoundError:
-        return FileExistsError
+        return FileNotFoundError
     
 def getBtnTxtClr():
     try:
@@ -46,11 +46,19 @@ def getBtnTxtClr():
         save = jx.loads(sr.read())
         return save["btntxtclr"]
     except FileNotFoundError:
-        return FileExistsError
+        return FileNotFoundError
+    
+def getSNAME():
+    try:
+        sr = open("save.json")
+        save = jx.loads(sr.read())
+        return save["sname"]
+    except FileNotFoundError:
+        return FileNotFoundError
 
 @app.route("/")
 def home():
-    return render_template("home.html", wt=getHomePageSave()["welcometext"], name=getHomePageSave()["pagetitle"], bc = getBtnClr(), blc = getBtnLnClr(), btc = getBtnTxtClr(), version = ver)
+    return render_template("home.html", wt=getHomePageSave()["welcometext"], name=getHomePageSave()["pagetitle"], bc = getBtnClr(), blc = getBtnLnClr(), btc = getBtnTxtClr(), version = ver, sname = getSNAME())
 
 @app.route("/login")
 def login():
