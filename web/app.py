@@ -51,3 +51,7 @@ def getBtnTxtClr():
 @app.route("/")
 def home():
     return render_template("home.html", wt=getHomePageSave()["welcometext"], name=getHomePageSave()["pagetitle"], bc = getBtnClr(), blc = getBtnLnClr(), btc = getBtnTxtClr(), version = ver)
+
+@app.route("/login")
+def login():
+    return render_template("login.html", name=getHomePageSave()["pagetitle"])

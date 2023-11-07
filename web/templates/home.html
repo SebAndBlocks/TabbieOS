@@ -37,20 +37,29 @@
             border-radius: 5rem;
             margin-top: 2.25rem;
         }
+        .bottom-left, .bottom-right{
+            position: fixed;
+            bottom: 0;
+        }
+        .bottom-right{
+            right: 0;
+        }
     </style>
 </head>
 <body>
     <div class="bwrap">
-        <h2>Tabbie {{ version }}</h4>
+        <h2>Tabbie v{{ version }}</h2>
         {% if wt %}
         <h1 class="wt">{{ wt }}</h1>
         {% else %}
         <h1 class="wt">Add a Welcome Text in the Config</h1>
         {% endif %}
         <center>
-            <p><a href="login"><button>LOGIN / LOGOUT</button></a></p>
-            <p><a href="lib"><button>LIBRARY INFO</button></a></p>
-            <p><a href="student-info"><button>STUDENT INFO</button></a></p>
+            <p><a href="/login"><button>LOGIN / LOGOUT</button></a></p>
+            <p><a href="/lib"><button>LIBRARY INFO</button></a></p>
+            <p><a href="/student-info"><button>STUDENT INFO</button></a></p>
         </center>
+        <h2 class="bottom-left">Made by TurquoiseTNT Multimedia</h2>
+        <h2 class="bottom-right">{{ sname }}</h2>
     </div class="bwrap">
 </body>
